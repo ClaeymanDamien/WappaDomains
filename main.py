@@ -1,4 +1,5 @@
 import argparse
+from WappaDomains import *
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -17,9 +18,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    """if not args.output:
-        crtsh = Crtsh(args.domain)
+    if args.output:
+        wappa = WappaDomains(args.domains, args.output)
     else:
-        crtsh = Crtsh(args.domain, args.output)
-
-    crtsh.exec()"""
+        wappa = WappaDomains(args.domains)
+    wappa.exec()
