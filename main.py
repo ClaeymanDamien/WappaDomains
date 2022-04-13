@@ -16,10 +16,12 @@ if __name__ == '__main__':
         help="Path folder to save results",
     )
 
+    parser.add_argument(
+        '-t', '--type',
+        help="Output type (csv = default, txt, small_csv)",
+    )
+
     args = parser.parse_args()
 
-    if args.output:
-        wappa = WappaDomains(args.domains, args.output)
-    else:
-        wappa = WappaDomains(args.domains)
+    wappa = WappaDomains(args.domains, args.output, args.type)
     wappa.exec()
